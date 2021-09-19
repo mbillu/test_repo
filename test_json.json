@@ -1,0 +1,69 @@
+{
+    "model_1": {
+        "stage": "In-dev",
+        "deployment_details": {},
+        "model_details": {
+            "dataio": {},
+            "mlflow": {},
+            "model_params": {}
+        }
+    },
+
+    "model_2": {
+        "stage": "Ready to dev",
+        "deployment_details": {
+            "port": 8001,
+            "backend_name": "OnlineMLbackend",
+            "route_name": "anomaly_detector"
+        },
+        "model_details": {
+            "dataio": {
+                  "machine_name": "CLA09",
+                  "measurement_name": "power",
+                  "field_name": "dBm_CH1_PR",
+                  "eval_window_size": 30,
+                  "eval_stride": 10
+            },
+            "mlflow": {
+                  "experiment_name": "cla09",
+                  "run_name":"first_run"
+            },
+            "model_params": {
+                  "model_index": 0,
+                  "classification_threshold": 0.5,
+                  "drift_threshold": 0.3,
+                  "eval_lower_bound":5,
+                  "eval_upper_bound": 10
+            }
+        }
+    },
+
+    "model_3": {
+        "stage": "Ready to dev",
+        "deployment_details": {
+            "port": 8001,
+            "backend_name": "OnlineMLbackend",
+            "route_name": "anomaly_detector"
+        },
+        "model_details": {
+            "dataio": {
+                  "machine_name": "CTX04",
+                  "measurement_name": "force",
+                  "field_name": "Force_sensor_PUT1_Raw",
+                  "eval_window_size": 50,
+                  "eval_stride": 20
+            },
+            "mlflow": {
+                  "experiment_name": "ctx04",
+                  "run_name":"second_run"
+            },
+            "model_params": {
+                  "model_index": 0,
+                  "classification_threshold": 0.6,
+                  "drift_threshold": 0.3,
+                  "eval_lower_bound":50,
+                  "eval_upper_bound": 150
+            }
+        }
+    }
+}
